@@ -21,8 +21,9 @@ class _HomePageViewState extends State<HomePageView> {
   final textRecognizer = GoogleMlKit.vision.textRecognizer();
   final ImagePicker _picker = ImagePicker();
 
-  String? extractedText;
+  String? extractedText; //to show output text
 
+//method to pick image and process the text
   Future<void> process() async {
     if (selectedImage != null) {
       setState(() {
@@ -50,12 +51,7 @@ class _HomePageViewState extends State<HomePageView> {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text("Text Recognition System"),
-      //   backgroundColor: Colors.blueAccent,
-      // ),
       body: Container(
         color: Colors.white,
         child: Center(
